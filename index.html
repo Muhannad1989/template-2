@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Clasic</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css" /> -->
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="myDIV" onscroll="myFunction()">
+      <div class="sidebar">
+        <ul>
+          <li>Home</li>
+          <li>Contact</li>
+          <li>Info</li>
+          <li>About</li>
+        </ul>
+      </div>
+      <div class="con">
+        <div class="header">
+          <div class="layer"></div>
+          <div class="navbar" id="navbar">
+            <ul>
+              <li class="selected"><i class="material-icons">view_carousel</i> Home</li>
+              <li><i class="material-icons">view_day</i> Contact</li>
+              <li><i class="material-icons">view_day</i> Info</li>
+              <li><i class="material-icons">shopping_cart</i> About</li>
+            </ul>
+          </div>
+          <div class="text">
+            <h2>
+              Material Kit PRO
+            </h2>
+            <p>
+              Material Kit PRO is a Bootstrap UI Kit with a fresh, new design inspired by Google's
+              Material Design.
+            </p>
+          </div>
+        </div>
+        <div class="container">
+          <div class="content">
+            <img class="laptop" id="laptop" src="./laptop-basics.png" alt="laptop" />
+            <div class="art" id="art">
+              <h3>Material Design.</h3>
+              <p>Kit PRO is a Bootstrap UI Kit with a fresh, new design inspired by Google's</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12  article" style="padding: 0;">
+              <div class="complected">
+                <img src="./img_avatar3.png" class="avatar" />
+                <div class="overlay2">
+                  <h4 class="title2">
+                    title
+                  </h4>
+                  <p class="text2">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12  article" style="padding: 0;">
+              <div class="complected">
+                <img src="./img_avatar3.png" class="avatar" />
+                <div class="overlay2">
+                  <h4 class="title2">
+                    title
+                  </h4>
+                  <p class="text2">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12  article" style="padding: 0;">
+              <div class="complected">
+                <img src="./img_avatar3.png" class="avatar" />
+                <div class="overlay2">
+                  <h4 class="title2">
+                    title
+                  </h4>
+                  <p class="text2">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12  article">
+      <h3>article</h3>
+      <p>
+        Material Kit PRO is a Bootstrap UI Kit with a fresh, new design inspired by Google's
+        Material Design.
+      </p>
+      <button class="button2">view more</button>
+      <div class="test">
+        <button class="cbutton cbutton--effect-radomir">
+          ss
+        </button>
+      </div>
+    </div> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $('.cbutton').click(function() {
+        var $ele = $(this);
+        $ele.addClass('cbutton--click');
+        setTimeout(function() {
+          $ele.removeClass('cbutton--click');
+        }, 400);
+      });
+
+      $('.overlay2').mouseover(function() {
+        $('.title2').css('top', '10%');
+        $('.text2').css('bottom', '0%');
+      });
+
+      $('.overlay2').mouseout(function() {
+        $('.title2').css('top', '-22%');
+        $('.text2').css('bottom', '-55%');
+      });
+    </script>
+    <script>
+      const myFunction = () => {
+        let height = Math.ceil(document.getElementById('myDIV').scrollTop);
+        let navbar = document.getElementById('navbar');
+        let laptop = document.getElementById('laptop');
+        let art = document.getElementById('art');
+        let ele = document.getElementsByTagName('LI');
+        if (height >= 80) {
+          navbar.style.backgroundColor = 'white';
+          navbar.style.paddingTop = '20px';
+          navbar.style.height = '12vh';
+          for (let i = 0; i < ele.length; i++) {
+            ele[i].style.color = '#3e3947';
+          }
+          navbar.style.boxShadow = 'none';
+          navbar.style.transition = 'all 0.5s linear';
+          navbar.style.top = '-105px';
+        } else if (height < 80) {
+          navbar.style.backgroundColor = 'transparent';
+          navbar.style.paddingTop = '30px';
+          navbar.style.height = '13vh';
+          navbar.style.transition = 'all 0.5s linear';
+          navbar.style.top = '0px';
+
+          for (let i = 0; i < ele.length; i++) {
+            ele[i].style.color = 'white';
+          }
+        }
+
+        if (height >= 300) {
+          laptop.style.opacity = '1';
+          laptop.style.right = '-23%';
+          laptop.style.transition = 'all 0.8s linear';
+
+          art.style.opacity = '1';
+          art.style.left = '10%';
+          art.style.transition = 'all 1.5s linear';
+        }
+      };
+    </script>
+  </body>
+</html>
